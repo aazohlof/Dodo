@@ -1,0 +1,201 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2865
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <title>Not Happy Valentine\'92s Day</title>\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
+\
+  <style>\
+    * \{\
+      box-sizing: border-box;\
+      font-family: 'Poppins', system-ui, sans-serif;\
+    \}\
+\
+    body \{\
+      margin: 0;\
+      min-height: 100vh;\
+      background: linear-gradient(135deg, #6a0dad, #b1124c);\
+      color: #fff;\
+      display: flex;\
+      justify-content: center;\
+      align-items: center;\
+      text-align: center;\
+      overflow-x: hidden;\
+    \}\
+\
+    .container \{\
+      max-width: 900px;\
+      padding: 60px 25px;\
+    \}\
+\
+    section \{\
+      margin-bottom: 90px;\
+    \}\
+\
+    h1 \{\
+      font-size: 3rem;\
+      line-height: 1.2;\
+      cursor: pointer;\
+    \}\
+\
+    h1 span \{\
+      opacity: 0.7;\
+      font-size: 1.2rem;\
+      display: block;\
+      margin-top: 15px;\
+    \}\
+\
+    p \{\
+      font-size: 1.2rem;\
+      line-height: 1.8;\
+      margin: 20px 0;\
+    \}\
+\
+    .hint \{\
+      font-size: 0.9rem;\
+      opacity: 0.6;\
+      margin-top: 10px;\
+    \}\
+\
+    .memory \{\
+      background: rgba(255,255,255,0.1);\
+      padding: 20px;\
+      border-radius: 18px;\
+      margin: 20px 0;\
+      cursor: pointer;\
+      transition: 0.3s ease;\
+    \}\
+\
+    .memory:hover \{\
+      background: rgba(255,255,255,0.18);\
+      transform: scale(1.02);\
+    \}\
+\
+    .hidden \{\
+      display: none;\
+      opacity: 0;\
+    \}\
+\
+    .final \{\
+      font-size: 1.4rem;\
+    \}\
+\
+    .signature \{\
+      margin-top: 40px;\
+      font-size: 1.1rem;\
+      opacity: 0.85;\
+    \}\
+\
+    /* hearts */\
+    .heart \{\
+      position: fixed;\
+      font-size: 18px;\
+      animation: floatUp 2.5s ease forwards;\
+      pointer-events: none;\
+    \}\
+\
+    @keyframes floatUp \{\
+      from \{\
+        transform: translateY(0);\
+        opacity: 1;\
+      \}\
+      to \{\
+        transform: translateY(-120px);\
+        opacity: 0;\
+      \}\
+    \}\
+  </style>\
+</head>\
+\
+<body>\
+  <div class="container">\
+\
+    <!-- HERO -->\
+    <section>\
+      <h1 id="heroText">\
+        Not happy Valentine\'92s Day.\
+        <span>(yeah, I said it)</span>\
+      </h1>\
+      <p class="hint">hover me \uc0\u55357 \u56384 </p>\
+    </section>\
+\
+    <!-- MEMORIES -->\
+    <section>\
+      <p>\
+        Because honestly\'85  \
+        every day with you already feels like Valentine\'92s.\
+      </p>\
+\
+      <div class="memory" onclick="toggleReveal()">\
+        Click me if you remember what <strong>\'93Toz feki\'94</strong> means.\
+      </div>\
+\
+      <p id="reveal" class="hidden">\
+        If someone ever writes a dictionary for *us*,  \
+        \'93Toz feki\'94 would mean:  \
+        <em>laughing for no reason and somehow feeling safe doing it.</em>\
+      </p>\
+\
+      <p>\
+        I love how we tease each other,  \
+        how you pretend you\'92re calm while I know I annoy you on purpose \uc0\u55357 \u56844 \
+      </p>\
+    </section>\
+\
+    <!-- FINAL NOTE -->\
+    <section>\
+      <p class="final">\
+        I don\'92t celebrate one day for you.  \
+        I celebrate you randomly, unintentionally,  \
+        and sometimes at the worst timing possible.\
+      </p>\
+\
+      <p>\
+        So no \'97 not happy Valentine\'92s Day.  \
+        Just\'85 happy us.\
+      </p>\
+\
+      <div class="signature">\
+        \'97 Zohlof \uc0\u55357 \u56476 \
+      </div>\
+    </section>\
+\
+  </div>\
+\
+  <script>\
+    const hero = document.getElementById("heroText");\
+\
+    hero.addEventListener("mouseenter", () => \{\
+      hero.innerHTML = "Because every day is my Valentine with you.<span>(caught you smiling)</span>";\
+    \});\
+\
+    hero.addEventListener("mouseleave", () => \{\
+      hero.innerHTML = "Not happy Valentine\'92s Day.<span>(yeah, I said it)</span>";\
+    \});\
+\
+    function toggleReveal() \{\
+      const el = document.getElementById("reveal");\
+      el.classList.toggle("hidden");\
+      el.style.opacity = 1;\
+    \}\
+\
+    document.addEventListener("click", (e) => \{\
+      const heart = document.createElement("div");\
+      heart.className = "heart";\
+      heart.innerText = "\uc0\u55357 \u56476 ";\
+      heart.style.left = e.clientX + "px";\
+      heart.style.top = e.clientY + "px";\
+      document.body.appendChild(heart);\
+\
+      setTimeout(() => heart.remove(), 2500);\
+    \});\
+  </script>\
+</body>\
+</html>}
